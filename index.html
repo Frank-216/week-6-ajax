@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Animal Buttons</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Call Jquery code -->
+    <script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default" style="height:100px">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand " href="#"><h1>Giphy API Test</h1></a>
+	    </div>
+
+  </div><!-- /.container-fluid -->
+</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 button-holder">
+				<button class = "btn btn-default" data-item="cat">meow</button>
+    		<button class = "btn btn-default" data-item="simpsons">woof</button>
+    		<button class = "btn btn-default" data-item="bird">chirp</button>
+			</div><!-- Close col-md-12-->
+			
+		</div><!-- /.row-->
+		<div class="row">
+			<div class="col-md-8">
+				
+			</div>
+			<div class="col-md-4">
+				<form>
+  				<h2>To Do Item: <input type="text" id="addSearch"><input type="submit" value="Add Item" id="submitBox"></h2>
+				</form>
+			</div>
+		</div><!-- /.row-->
+
+    <div id="gifsAppearHere">
+    </div>
+	</div>
+    
+    <script src ="assets/javascript/app.js"></script>
+    
+</body>
+
+</html>
