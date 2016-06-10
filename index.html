@@ -26,26 +26,24 @@
 </nav>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 button-holder">
-				<button class = "btn btn-default" data-item="cat">meow</button>
-    		<button class = "btn btn-default" data-item="simpsons">woof</button>
-    		<button class = "btn btn-default" data-item="bird">chirp</button>
+			<div class="col-md-8 button-holder">
+				<button class = "btn btn-default gif" data-item="cat">meow</button>
+    		<button class = "btn btn-default gif" data-item="simpsons">woof</button>
+    		<button class = "btn btn-default gif" data-item="bird">chirp</button>
 			</div><!-- Close col-md-12-->
-			
-		</div><!-- /.row-->
-		<div class="row">
-			<div class="col-md-8">
-				
-			</div>
 			<div class="col-md-4">
 				<form>
-  				<h2>To Do Item: <input type="text" id="addSearch"><input type="submit" value="Add Item" id="submitBox"></h2>
+						<h2>Add New Item <input type="text" id="addSearch"><input type="submit" value="Add Item" id="submitBox"></h2>
 				</form>
-			</div>
+				<!-- Close col-md-4 -->
+			</div> 
+		</div><!-- /.row-->
+		<div class="row">
+			<div class="col-md-8" id="gifsAppearHere">
+			</div>			<!-- close div gifs AppearHere -->
 		</div><!-- /.row-->
 
-    <div id="gifsAppearHere">
-    </div>
+    
 	</div>
     
     <script src ="assets/javascript/app.js"></script>
