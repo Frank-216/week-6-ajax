@@ -54,6 +54,8 @@ $(document).ready(function(){
                 for (var i = 0; i < results.length; i++) {
 
                     var animalDiv = $('<div>');
+                    animalDiv.addClass(i);
+                    
                     var p = $('<p>');
                     var rating = results[i].rating;
                     console.log(rating);
@@ -77,15 +79,16 @@ $(document).ready(function(){
                     animalDiv.append(imgGif);
                     $('#gifsAppearHere').prepend(animalDiv);
                     
+                    $('img').hover(function(){
+                      console.log("entered the image")
+                      imgStill.hide();
+                        imgGif.show();
+                     }, function(){
+                         imgStill.show();
+                        imgGif.hide();
+                    });
                 };
-                $('img').hover(function(){
-                    console.log("entered the image")
-                    imgStill.hide();
-                    imgGif.show();
-                }, function(){
-                    imgStill.show();
-                    imgGif.hide();
-                });
+                
 
                 
 
