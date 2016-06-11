@@ -66,7 +66,7 @@ $(document).ready(function(){
                     imgStill.addClass("still");
 
                     //create img Gif
-                    imgGif.attr('scr', results[i].images.fixed_height.url);
+                    imgGif.attr('src',results[i].images.fixed_height.url);
                     imgGif.addClass('move');
 
                     // hide gif image
