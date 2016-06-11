@@ -30,7 +30,7 @@ $(document).ready(function(){
         $(this).addClass('check') ;   
     });
 
-    $(document.body).on('click', '.gif', function(){
+    $(document.body).on('click', '.gif','.image', function(){
         $('#gifsAppearHere').empty();
         var animal = $(this).data('item');
         var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC";
@@ -54,39 +54,62 @@ $(document).ready(function(){
                 for (var i = 0; i < results.length; i++) {
 
                     var animalDiv = $('<div>');
-                    animalDiv.addClass(i);
+                    animalDiv.addClass('image');
                     
                     var p = $('<p>');
                     var rating = results[i].rating;
                     console.log(rating);
                     p.text('Rating: '+rating );
 
-                    var imgGif = $('<img>');
-                    var imgStill = $('<img>');
+                    var image = $('<img>');
                     // add a class that will stop the gif when it is loaded. Make the img src a still of the image. On hover switch it to the moving gif. 
-                    imgStill.attr('src',results[i].images.fixed_height_still.url);
-                    imgStill.addClass("still");
+                    image.attr('src',results[i].images.fixed_height_still.url);
+                    image.attr('data-still',results[i].images.fixed_height_still.url)
+                    image.attr('data-animate',results[i].images.fixed_height.url);
+                    image.attr("state",'still');
 
-                    //create img Gif
-                    imgGif.attr('src',results[i].images.fixed_height.url);
+                    // this is my original attempt to code the animate feature.  it did not work 
+                    /*//create img Gif
+                    imgGif.attr('src',);
+                    imgGif.attr('state',results[i].images.fixed_height.url)
+                    imgGif.attr('data-num',i);
+                    imgGif.attr("state",'gif');
                     imgGif.addClass('move');
-
+*/
                     // hide gif image
-                    imgGif.hide();
+                    //imgGif.hide();
                     // Add all items to the div
                     animalDiv.append(p);
-                    animalDiv.append(imgStill);
-                    animalDiv.append(imgGif);
+                    animalDiv.append(image);
+                   // animalDiv.append(imgGif);
                     $('#gifsAppearHere').prepend(animalDiv);
+                    // works but ask if there is a way to make it pertain to a specific item
+                    $('img').on('click', function(){
+                        var state = $(this).attr('data-state'); 
+
+                        if ( state == 'still'){
+                         $(this).attr('src', $(this).data('animate'));
+                         $(this).attr('data-state', 'animate');
+                        }else{
+                          $(this).attr('src', $(this).data('still'));
+                         $(this).attr('data-state', 'still');
+                     }
+                    })
+
                     
-                    $('img').hover(function(){
-                      console.log("entered the image")
-                      imgStill.hide();
+                    /*
+                    var state = 
+                    $(".image").hover(function(){
+                        var item = $(this);
+                        console.log(item);
+                        console.log("entered the image")
+
+                        imgStill.hide();
                         imgGif.show();
                      }, function(){
                          imgStill.show();
                         imgGif.hide();
-                    });
+                    });*/
                 };
                 
 
